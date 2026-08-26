@@ -1,0 +1,93 @@
+{
+  "Java Full Stack Developer": {
+    "description": "A developer who builds complete web applications using Java, backend frameworks, databases and frontend technologies.",
+    "skills": [
+      "Java",
+      "OOP",
+      "Collections",
+      "Exception Handling",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Spring Boot",
+      "REST API",
+      "Database Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+  "Python Full Stack Developer": {
+    "description": "A developer who builds web applications using Python backend technologies and modern frontend technologies.",
+    "skills": [
+      "Python",
+      "OOP",
+      "Data Structures",
+      "Exception Handling",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "FastAPI",
+      "REST API",
+      "Database Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+  "Data Scientist": {
+    "description": "A professional who uses statistics, programming and machine learning to analyze data and build predictive solutions.",
+    "skills": [
+      "Python",
+      "Statistics",
+      "Probability",
+      "NumPy",
+      "Pandas",
+      "Data Visualization",
+      "SQL",
+      "Machine Learning",
+      "Scikit-learn",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Git",
+      "Project Development"
+    ]
+  },
+  "Machine Learning Engineer": {
+    "description": "A professional who develops, evaluates and deploys machine learning models.",
+    "skills": [
+      "Python",
+      "Data Structures",
+      "Statistics",
+      "Probability",
+      "NumPy",
+      "Pandas",
+      "Machine Learning",
+      "Scikit-learn",
+      "Deep Learning",
+      "PyTorch",
+      "Model Evaluation",
+      "Git",
+      "APIs",
+      "Project Development"
+    ]
+  },
+  "Frontend Developer": {
+    "description": "A developer who builds the user-facing part of web applications.",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Responsive Design",
+      "React",
+      "Components",
+      "State Management",
+      "API Integration",
+      "Testing",
+      "Project Development"
+    ]
+  }
+}
