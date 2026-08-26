@@ -1,0 +1,96 @@
+{
+    "Python": {
+        "prerequisites": []
+    },
+
+    "Mathematics": {
+        "prerequisites": []
+    },
+
+    "Statistics": {
+        "prerequisites": [
+            "Mathematics"
+        ]
+    },
+
+    "Machine Learning": {
+        "prerequisites": [
+            "Python",
+            "Mathematics",
+            "Statistics"
+        ]
+    },
+
+    "Deep Learning": {
+        "prerequisites": [
+            "Python",
+            "Machine Learning"
+        ]
+    },
+
+    "AI Project": {
+        "prerequisites": [
+            "Machine Learning",
+            "Deep Learning"
+        ]
+    },
+
+    "Data Visualization": {
+        "prerequisites": [
+            "Statistics"
+        ]
+    },
+
+    "SQL": {
+        "prerequisites": []
+    },
+
+    "Data Science Project": {
+        "prerequisites": [
+            "Python",
+            "SQL",
+            "Statistics",
+            "Data Visualization",
+            "Machine Learning"
+        ]
+    },
+
+    "HTML": {
+        "prerequisites": []
+    },
+
+    "CSS": {
+        "prerequisites": [
+            "HTML"
+        ]
+    },
+
+    "JavaScript": {
+        "prerequisites": [
+            "HTML",
+            "CSS"
+        ]
+    },
+
+    "React": {
+        "prerequisites": [
+            "JavaScript"
+        ]
+    },
+
+    "Backend Development": {
+        "prerequisites": [
+            "Python"
+        ]
+    },
+
+    "Web Project": {
+        "prerequisites": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Backend Development"
+        ]
+    }
+}
