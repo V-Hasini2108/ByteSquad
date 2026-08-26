@@ -12,28 +12,37 @@ function Goal() {
     }
 
     localStorage.setItem("learningGoal", goal);
+
     navigate("/profile");
   };
 
   return (
-    <div>
-      <h1>What is your learning goal?</h1>
+    <div className="page-container">
+      <div className="form-card">
+        <span className="step-text">
+          STEP 1 OF 2
+        </span>
 
-      <p>Tell us what you want to achieve.</p>
+        <h1>What do you want to achieve?</h1>
 
-      <textarea
-        value={goal}
-        onChange={(e) => setGoal(e.target.value)}
-        placeholder="Example: I want to become a Java Full Stack Developer"
-        rows="6"
-      />
+        <p>
+          Describe your career or learning goal in your own words.
+        </p>
 
-      <br />
-      <br />
+        <textarea
+          value={goal}
+          onChange={(e) => setGoal(e.target.value)}
+          placeholder="Example: I want to become a Java Full Stack Developer"
+          rows="7"
+        />
 
-      <button onClick={handleContinue}>
-        Continue
-      </button>
+        <button
+          className="primary-button"
+          onClick={handleContinue}
+        >
+          Continue →
+        </button>
+      </div>
     </div>
   );
 }

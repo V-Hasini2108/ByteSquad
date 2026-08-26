@@ -31,69 +31,76 @@ function Profile() {
   };
 
   return (
-    <div>
-      <h1>Create Your Learning Profile</h1>
+    <div className="page-container">
+      <div className="form-card">
 
-      <label>Current Skill Level</label>
-      <br />
+        <span className="step-text">
+          STEP 2 OF 2
+        </span>
 
-      <select
-        value={level}
-        onChange={(e) => setLevel(e.target.value)}
-      >
-        <option>Beginner</option>
-        <option>Intermediate</option>
-        <option>Advanced</option>
-      </select>
+        <h1>Create Your Learning Profile</h1>
 
-      <br />
-      <br />
+        <p>
+          This helps us understand your current learning level.
+        </p>
 
-      <label>Skills You Already Know</label>
-      <br />
+        <div className="form-group">
+          <label>Current Skill Level</label>
 
-      <input
-        type="text"
-        value={skills}
-        onChange={(e) => setSkills(e.target.value)}
-        placeholder="Example: Java, Python, HTML"
-      />
+          <select
+            value={level}
+            onChange={(e) => setLevel(e.target.value)}
+          >
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+        </div>
 
-      <br />
-      <br />
+        <div className="form-group">
+          <label>Skills You Already Know</label>
 
-      <label>Study Hours Per Week</label>
-      <br />
+          <input
+            type="text"
+            value={skills}
+            onChange={(e) => setSkills(e.target.value)}
+            placeholder="Example: Java, HTML, Python"
+          />
+        </div>
 
-      <input
-        type="number"
-        value={studyHours}
-        onChange={(e) => setStudyHours(e.target.value)}
-        placeholder="Example: 10"
-      />
+        <div className="form-group">
+          <label>Study Hours Per Week</label>
 
-      <br />
-      <br />
+          <input
+            type="number"
+            value={studyHours}
+            onChange={(e) => setStudyHours(e.target.value)}
+            placeholder="Example: 10"
+          />
+        </div>
 
-      <label>Target Duration</label>
-      <br />
+        <div className="form-group">
+          <label>Target Duration</label>
 
-      <select
-        value={duration}
-        onChange={(e) => setDuration(e.target.value)}
-      >
-        <option>1 Month</option>
-        <option>3 Months</option>
-        <option>6 Months</option>
-        <option>1 Year</option>
-      </select>
+          <select
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+          >
+            <option>1 Month</option>
+            <option>3 Months</option>
+            <option>6 Months</option>
+            <option>1 Year</option>
+          </select>
+        </div>
 
-      <br />
-      <br />
+        <button
+          className="primary-button"
+          onClick={handleSubmit}
+        >
+          Generate My Learning Path ✨
+        </button>
 
-      <button onClick={handleSubmit}>
-        Generate My Learning Path
-      </button>
+      </div>
     </div>
   );
 }
