@@ -1,29 +1,151 @@
 {
-    "AI Engineer": [
-        "Python",
-        "Mathematics",
-        "Statistics",
-        "Machine Learning",
-        "Deep Learning",
-        "AI Project"
-    ],
-
-    "Data Scientist": [
-        "Python",
-        "Mathematics",
-        "Statistics",
-        "SQL",
-        "Machine Learning",
-        "Data Visualization",
-        "Data Science Project"
-    ],
-
-    "Web Developer": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Backend Development",
-        "Web Project"
+  "Java Full Stack Developer": {
+    "description": "A developer who builds complete web applications using Java, backend frameworks, databases and frontend technologies.",
+    "skills": [
+      "Java",
+      "OOP",
+      "Collections",
+      "Exception Handling",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Spring Boot",
+      "REST API",
+      "Database Integration",
+      "Testing",
+      "Project Development"
     ]
+  },
+
+  "Python Full Stack Developer": {
+    "description": "A developer who builds web applications using Python backend technologies and modern frontend technologies.",
+    "skills": [
+      "Python",
+      "OOP",
+      "Data Structures",
+      "Exception Handling",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "FastAPI",
+      "REST API",
+      "Database Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+
+  "Data Scientist": {
+    "description": "A professional who uses statistics, programming and machine learning to analyze data and build predictive solutions.",
+    "skills": [
+      "Python",
+      "Statistics",
+      "Probability",
+      "NumPy",
+      "Pandas",
+      "Data Visualization",
+      "SQL",
+      "Machine Learning",
+      "Scikit-learn",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Git",
+      "Project Development"
+    ]
+  },
+
+  "Machine Learning Engineer": {
+    "description": "A professional who develops, evaluates and deploys machine learning models.",
+    "skills": [
+      "Python",
+      "Data Structures",
+      "Statistics",
+      "Probability",
+      "NumPy",
+      "Pandas",
+      "Machine Learning",
+      "Scikit-learn",
+      "Deep Learning",
+      "PyTorch",
+      "Model Evaluation",
+      "Git",
+      "APIs",
+      "Project Development"
+    ]
+  },
+
+  "Frontend Developer": {
+    "description": "A developer who builds the user-facing part of web applications.",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Responsive Design",
+      "React",
+      "Components",
+      "State Management",
+      "API Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+
+  "K-pop Idol": {
+    "description": "A performer who develops skills in singing, dancing, stage performance and Korean pop culture.",
+    "skills": [
+      "Vocal Training",
+      "Dance Training",
+      "Korean Language",
+      "Stage Performance",
+      "Facial Expressions",
+      "Rhythm and Timing",
+      "Physical Fitness",
+      "Performance Confidence",
+      "Audition Preparation",
+      "Music and Performance Practice",
+      "Social Media Presence",
+      "Final Performance"
+    ]
+  },
+
+  "Singer": {
+    "description": "A vocalist who develops singing technique, musicality, performance ability and confidence.",
+    "skills": [
+      "Vocal Fundamentals",
+      "Breathing Technique",
+      "Pitch and Tone",
+      "Vocal Range",
+      "Ear Training",
+      "Song Interpretation",
+      "Stage Performance",
+      "Microphone Technique",
+      "Performance Confidence",
+      "Recording Practice",
+      "Repertoire Development",
+      "Final Performance"
+    ]
+  },
+
+  "Dancer": {
+    "description": "A performer who develops movement, rhythm, technique, choreography and stage presence.",
+    "skills": [
+      "Dance Fundamentals",
+      "Body Control",
+      "Flexibility",
+      "Rhythm and Musicality",
+      "Dance Technique",
+      "Choreography",
+      "Freestyle Practice",
+      "Stage Presence",
+      "Performance Confidence",
+      "Physical Fitness",
+      "Dance Video Practice",
+      "Final Performance"
+    ]
+  }
 }
