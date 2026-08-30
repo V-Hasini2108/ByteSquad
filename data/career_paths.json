@@ -1,0 +1,29 @@
+{
+    "AI Engineer": [
+        "Python",
+        "Mathematics",
+        "Statistics",
+        "Machine Learning",
+        "Deep Learning",
+        "AI Project"
+    ],
+
+    "Data Scientist": [
+        "Python",
+        "Mathematics",
+        "Statistics",
+        "SQL",
+        "Machine Learning",
+        "Data Visualization",
+        "Data Science Project"
+    ],
+
+    "Web Developer": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Backend Development",
+        "Web Project"
+    ]
+}
