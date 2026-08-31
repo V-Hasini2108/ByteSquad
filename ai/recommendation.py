@@ -18,7 +18,6 @@ with open("data/skills.json", "r") as file:
 
 def find_missing_skills(required_skills, current_skills):
 
-    # Convert user's skills to lowercase for comparison
     current_lower = {
         skill.strip().lower()
         for skill in current_skills
@@ -28,10 +27,11 @@ def find_missing_skills(required_skills, current_skills):
 
     for skill in required_skills:
 
-        if skill.lower() not in current_lower:
+        if skill.strip().lower() not in current_lower:
             missing.append(skill)
 
     return missing
+
 
 # ---------------------------------------
 # Get prerequisites
@@ -39,11 +39,27 @@ def find_missing_skills(required_skills, current_skills):
 
 def get_prerequisites(skill):
 
-    return skills_data.get(skill, {}).get("prerequisites", [])
+    skill_info = skills_data.get(skill, {})
+
+    return skill_info.get("prerequisites", [])
 
 
 # ---------------------------------------
-# Check if prerequisites are completed
+# Check if prerequisite is completed
+# ---------------------------------------
+
+def is_skill_completed(skill, completed_skills):
+
+    completed_lower = {
+        item.strip().lower()
+        for item in completed_skills
+    }
+
+    return skill.strip().lower() in completed_lower
+
+
+# ---------------------------------------
+# Check if skill can be learned
 # ---------------------------------------
 
 def can_learn(skill, completed_skills):
@@ -52,7 +68,10 @@ def can_learn(skill, completed_skills):
 
     for prerequisite in prerequisites:
 
-        if prerequisite not in completed_skills:
+        if not is_skill_completed(
+            prerequisite,
+            completed_skills
+        ):
             return False
 
     return True
@@ -62,7 +81,10 @@ def can_learn(skill, completed_skills):
 # Generate roadmap
 # ---------------------------------------
 
-def generate_roadmap(missing_skills, completed_skills):
+def generate_roadmap(
+    missing_skills,
+    completed_skills
+):
 
     roadmap = []
 
@@ -74,7 +96,10 @@ def generate_roadmap(missing_skills, completed_skills):
 
         for skill in remaining.copy():
 
-            if can_learn(skill, completed_skills):
+            if can_learn(
+                skill,
+                completed_skills
+            ):
 
                 roadmap.append(skill)
 
@@ -84,55 +109,123 @@ def generate_roadmap(missing_skills, completed_skills):
 
                 progress_made = True
 
-                # Add only ONE skill at a time
+                # Add one skill at a time
                 break
 
+        # Prevent infinite loop
         if not progress_made:
             break
 
     return roadmap
 
+
 # ---------------------------------------
 # Main recommendation function
 # ---------------------------------------
 
-def recommend_for_career(career, current_skills):
+def recommend_for_career(
+    career,
+    current_skills
+):
 
+    # Check whether career exists
     if career not in career_data:
         return None
 
-    required_skills = career_data[career]
+    career_info = career_data[career]
+
+    # -----------------------------------
+    # Get required skills
+    # -----------------------------------
+
+    # New format used by teammate
+    if isinstance(career_info, dict):
+
+        required_skills = career_info.get(
+            "skills",
+            []
+        )
+
+        description = career_info.get(
+            "description",
+            ""
+        )
+
+    # Backward compatibility
+    else:
+
+        required_skills = career_info
+
+        description = ""
+
+    # -----------------------------------
+    # Find missing skills
+    # -----------------------------------
 
     missing_skills = find_missing_skills(
         required_skills,
         current_skills
     )
 
+    # -----------------------------------
+    # Generate roadmap
+    # -----------------------------------
+
     roadmap = generate_roadmap(
         missing_skills,
         current_skills.copy()
     )
 
+    # -----------------------------------
+    # Return result
+    # -----------------------------------
+
     return {
         "career": career,
+        "description": description,
         "required_skills": required_skills,
         "missing_skills": missing_skills,
         "roadmap": roadmap
     }
+
+
+# ---------------------------------------
+# Test
+# ---------------------------------------
+
 if __name__ == "__main__":
 
     result = recommend_for_career(
-        "AI Engineer",
+        "Machine Learning Engineer",
         ["Python"]
     )
 
-    print("\nCareer:")
-    print(result["career"])
+    if result is None:
 
-    print("\nMissing Skills:")
-    for skill in result["missing_skills"]:
-        print("-", skill)
+        print("Career not found.")
 
-    print("\nRoadmap:")
-    for number, skill in enumerate(result["roadmap"], start=1):
-        print(f"{number}. {skill}")
+    else:
+
+        print("\nCareer:")
+        print(result["career"])
+
+        print("\nDescription:")
+        print(result["description"])
+
+        print("\nRequired Skills:")
+
+        for skill in result["required_skills"]:
+            print("-", skill)
+
+        print("\nMissing Skills:")
+
+        for skill in result["missing_skills"]:
+            print("-", skill)
+
+        print("\nPersonalized Roadmap:")
+
+        for number, skill in enumerate(
+            result["roadmap"],
+            start=1
+        ):
+            print(f"{number}. {skill}")
