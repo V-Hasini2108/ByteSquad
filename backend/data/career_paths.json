@@ -1,0 +1,192 @@
+{
+  "Java Full Stack Developer": {
+    "description": "A developer who builds complete web applications using Java, backend frameworks, databases and frontend technologies.",
+    "skills": [
+      "Java",
+      "OOP",
+      "Collections",
+      "Exception Handling",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Spring Boot",
+      "REST API",
+      "Database Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+
+  "Python Full Stack Developer": {
+    "description": "A developer who builds web applications using Python backend technologies and modern frontend technologies.",
+    "skills": [
+      "Python",
+      "OOP",
+      "Data Structures",
+      "Exception Handling",
+      "SQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "FastAPI",
+      "REST API",
+      "Database Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+
+  "Data Scientist": {
+    "description": "A professional who uses statistics, programming and machine learning to analyze data and build predictive solutions.",
+    "skills": [
+      "Python",
+      "Statistics",
+      "Probability",
+      "NumPy",
+      "Pandas",
+      "Data Visualization",
+      "SQL",
+      "Machine Learning",
+      "Scikit-learn",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Git",
+      "Project Development"
+    ]
+  },
+
+  "Machine Learning Engineer": {
+    "description": "A professional who develops, evaluates and deploys machine learning models.",
+    "skills": [
+      "Python",
+      "Data Structures",
+      "Statistics",
+      "Probability",
+      "NumPy",
+      "Pandas",
+      "Machine Learning",
+      "Scikit-learn",
+      "Deep Learning",
+      "PyTorch",
+      "Model Evaluation",
+      "Git",
+      "APIs",
+      "Project Development"
+    ]
+  },
+
+  "Frontend Developer": {
+    "description": "A developer who builds the user-facing part of web applications.",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "Responsive Design",
+      "React",
+      "Components",
+      "State Management",
+      "API Integration",
+      "Testing",
+      "Project Development"
+    ]
+  },
+
+  "Singer": {
+    "description": "A performer who develops vocal technique, musical understanding, performance ability and professional singing skills.",
+    "skills": [
+      "Breathing Techniques",
+      "Vocal Warm-ups",
+      "Pitch Control",
+      "Voice Control",
+      "Rhythm and Timing",
+      "Ear Training",
+      "Vocal Expression",
+      "Song Interpretation",
+      "Stage Performance",
+      "Microphone Technique",
+      "Live Performance",
+      "Recording Practice",
+      "Performance Portfolio"
+    ]
+  },
+
+  "Dancer": {
+    "description": "A performer who develops movement, rhythm, coordination, choreography and stage performance skills.",
+    "skills": [
+      "Body Conditioning",
+      "Balance and Coordination",
+      "Rhythm",
+      "Basic Dance Techniques",
+      "Flexibility",
+      "Body Isolation",
+      "Musicality",
+      "Choreography",
+      "Dance Styles",
+      "Performance Skills",
+      "Freestyle Practice",
+      "Stage Presence",
+      "Dance Portfolio"
+    ]
+  },
+
+  "K-pop Idol": {
+    "description": "A performing artist who develops singing, dance, Korean language, stage presence and audition skills.",
+    "skills": [
+      "Vocal Fundamentals",
+      "Dance Fundamentals",
+      "Rhythm and Musicality",
+      "Korean Language Basics",
+      "Choreography",
+      "Vocal Performance",
+      "Stage Presence",
+      "Facial Expressions",
+      "Fitness and Conditioning",
+      "Audition Preparation",
+      "Camera Performance",
+      "Performance Portfolio",
+      "Mock Auditions"
+    ]
+  },
+
+  "Content Creator": {
+    "description": "A creator who develops skills in content planning, storytelling, video production and digital audience engagement.",
+    "skills": [
+      "Content Planning",
+      "Storytelling",
+      "Script Writing",
+      "Photography Basics",
+      "Video Recording",
+      "Video Editing",
+      "Audio Editing",
+      "Graphic Design Basics",
+      "Social Media Strategy",
+      "Audience Research",
+      "Personal Branding",
+      "Content Publishing",
+      "Portfolio Development"
+    ]
+  },
+
+  "Graphic Designer": {
+    "description": "A creative professional who creates visual communication using design principles, typography, color and digital design tools.",
+    "skills": [
+      "Design Principles",
+      "Typography",
+      "Color Theory",
+      "Composition",
+      "Sketching",
+      "Digital Illustration",
+      "Image Editing",
+      "Layout Design",
+      "Branding",
+      "Poster Design",
+      "Social Media Design",
+      "Design Portfolio",
+      "Client Project Practice"
+    ]
+  }
+}

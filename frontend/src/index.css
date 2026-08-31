@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  color: #1f2937;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
