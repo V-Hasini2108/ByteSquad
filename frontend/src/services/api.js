@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8000";
 
 export async function generateRoadmap(userData) {
   const response = await fetch(
-    `${API_URL}/generate-roadmap`,
+    `${API_URL}/api/roadmap`,
     {
       method: "POST",
       headers: {

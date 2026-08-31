@@ -95,98 +95,57 @@
     ]
   },
 
-  "Singer": {
-    "description": "A performer who develops vocal technique, musical understanding, performance ability and professional singing skills.",
+  "K-pop Idol": {
+    "description": "A performer who develops skills in singing, dancing, stage performance and Korean pop culture.",
     "skills": [
-      "Breathing Techniques",
-      "Vocal Warm-ups",
-      "Pitch Control",
-      "Voice Control",
+      "Vocal Training",
+      "Dance Training",
+      "Korean Language",
+      "Stage Performance",
+      "Facial Expressions",
       "Rhythm and Timing",
+      "Physical Fitness",
+      "Performance Confidence",
+      "Audition Preparation",
+      "Music and Performance Practice",
+      "Social Media Presence",
+      "Final Performance"
+    ]
+  },
+
+  "Singer": {
+    "description": "A vocalist who develops singing technique, musicality, performance ability and confidence.",
+    "skills": [
+      "Vocal Fundamentals",
+      "Breathing Technique",
+      "Pitch and Tone",
+      "Vocal Range",
       "Ear Training",
-      "Vocal Expression",
       "Song Interpretation",
       "Stage Performance",
       "Microphone Technique",
-      "Live Performance",
+      "Performance Confidence",
       "Recording Practice",
-      "Performance Portfolio"
+      "Repertoire Development",
+      "Final Performance"
     ]
   },
 
   "Dancer": {
-    "description": "A performer who develops movement, rhythm, coordination, choreography and stage performance skills.",
+    "description": "A performer who develops movement, rhythm, technique, choreography and stage presence.",
     "skills": [
-      "Body Conditioning",
-      "Balance and Coordination",
-      "Rhythm",
-      "Basic Dance Techniques",
+      "Dance Fundamentals",
+      "Body Control",
       "Flexibility",
-      "Body Isolation",
-      "Musicality",
+      "Rhythm and Musicality",
+      "Dance Technique",
       "Choreography",
-      "Dance Styles",
-      "Performance Skills",
       "Freestyle Practice",
       "Stage Presence",
-      "Dance Portfolio"
-    ]
-  },
-
-  "K-pop Idol": {
-    "description": "A performing artist who develops singing, dance, Korean language, stage presence and audition skills.",
-    "skills": [
-      "Vocal Fundamentals",
-      "Dance Fundamentals",
-      "Rhythm and Musicality",
-      "Korean Language Basics",
-      "Choreography",
-      "Vocal Performance",
-      "Stage Presence",
-      "Facial Expressions",
-      "Fitness and Conditioning",
-      "Audition Preparation",
-      "Camera Performance",
-      "Performance Portfolio",
-      "Mock Auditions"
-    ]
-  },
-
-  "Content Creator": {
-    "description": "A creator who develops skills in content planning, storytelling, video production and digital audience engagement.",
-    "skills": [
-      "Content Planning",
-      "Storytelling",
-      "Script Writing",
-      "Photography Basics",
-      "Video Recording",
-      "Video Editing",
-      "Audio Editing",
-      "Graphic Design Basics",
-      "Social Media Strategy",
-      "Audience Research",
-      "Personal Branding",
-      "Content Publishing",
-      "Portfolio Development"
-    ]
-  },
-
-  "Graphic Designer": {
-    "description": "A creative professional who creates visual communication using design principles, typography, color and digital design tools.",
-    "skills": [
-      "Design Principles",
-      "Typography",
-      "Color Theory",
-      "Composition",
-      "Sketching",
-      "Digital Illustration",
-      "Image Editing",
-      "Layout Design",
-      "Branding",
-      "Poster Design",
-      "Social Media Design",
-      "Design Portfolio",
-      "Client Project Practice"
+      "Performance Confidence",
+      "Physical Fitness",
+      "Dance Video Practice",
+      "Final Performance"
     ]
   }
 }

@@ -1,6 +1,113 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "http://localhost:8000";
+
+function normalizeGoal(goal) {
+  const text = goal.toLowerCase().trim();
+
+  // Frontend Developer
+  if (
+    text.includes("frontend") ||
+    text.includes("front-end") ||
+    text.includes("front end")
+  ) {
+    return "Frontend Developer";
+  }
+
+  // Java Full Stack Developer
+  if (
+    text.includes("java") &&
+    (
+      text.includes("developer") ||
+      text.includes("development") ||
+      text.includes("full stack") ||
+      text.includes("full-stack")
+    )
+  ) {
+    return "Java Full Stack Developer";
+  }
+
+  // Python Full Stack Developer
+  if (
+    text.includes("python") &&
+    (
+      text.includes("developer") ||
+      text.includes("development") ||
+      text.includes("full stack") ||
+      text.includes("full-stack")
+    )
+  ) {
+    return "Python Full Stack Developer";
+  }
+
+  // Data Scientist
+  if (
+    text.includes("data scientist") ||
+    text.includes("data science")
+  ) {
+    return "Data Scientist";
+  }
+
+  // Machine Learning Engineer
+  if (
+    text.includes("machine learning") ||
+    text.includes("ml engineer")
+  ) {
+    return "Machine Learning Engineer";
+  }
+
+  // K-pop Idol
+  if (
+    text.includes("k-pop") ||
+    text.includes("kpop") ||
+    text.includes("k pop") ||
+    text.includes("idol")
+  ) {
+    return "K-pop Idol";
+  }
+
+  // Singer
+  if (
+    text.includes("singer") ||
+    text.includes("singing") ||
+    text.includes("vocalist") ||
+    text.includes("vocal")
+  ) {
+    return "Singer";
+  }
+
+  // Dancer
+  if (
+    text.includes("dancer") ||
+    text.includes("dancing") ||
+    text.includes("dance")
+  ) {
+    return "Dancer";
+  }
+
+  // Content Creator
+  if (
+    text.includes("content creator") ||
+    text.includes("content creation") ||
+    text.includes("youtuber") ||
+    text.includes("youtube creator")
+  ) {
+    return "Content Creator";
+  }
+
+  // Graphic Designer
+  if (
+    text.includes("graphic designer") ||
+    text.includes("graphic design") ||
+    text.includes("designing")
+  ) {
+    return "Graphic Designer";
+  }
+
+  return null;
+}
+
 function Profile() {
   const navigate = useNavigate();
 
@@ -8,26 +115,135 @@ function Profile() {
   const [skills, setSkills] = useState("");
   const [studyHours, setStudyHours] = useState("");
   const [duration, setDuration] = useState("3 Months");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (skills.trim() === "" || studyHours === "") {
       alert("Please fill all required fields");
       return;
     }
 
-    const profile = {
-      level,
-      skills,
-      studyHours,
-      duration
-    };
+    const goal = localStorage.getItem("learningGoal");
 
-    localStorage.setItem(
-      "learnerProfile",
-      JSON.stringify(profile)
-    );
+    if (!goal) {
+      alert("Please enter your learning goal first.");
+      navigate("/goal");
+      return;
+    }
 
-    navigate("/processing");
+    const career = normalizeGoal(goal);
+
+    if (!career) {
+      alert(
+        "We could not identify that career yet. Try Frontend Developer, Singer, Dancer, K-pop Idol, Content Creator or Graphic Designer."
+      );
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // -----------------------------------------
+      // STEP 1: Create learner profile
+      // -----------------------------------------
+
+      const profileResponse = await fetch(
+        `${API_URL}/api/profile`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            goal: goal,
+            skillLevel: level,
+            skills: skills,
+            studyHours: Number(studyHours),
+            duration: duration
+          })
+        }
+      );
+
+      if (!profileResponse.ok) {
+        const errorText = await profileResponse.text();
+        throw new Error(
+          `Profile creation failed: ${errorText}`
+        );
+      }
+
+      const profileData = await profileResponse.json();
+
+      // -----------------------------------------
+      // STEP 2: Convert skills into an array
+      // -----------------------------------------
+
+      const currentSkills = skills
+        .split(",")
+        .map((skill) => skill.trim())
+        .filter((skill) => skill !== "");
+
+      // -----------------------------------------
+      // STEP 3: Generate personalized roadmap
+      // -----------------------------------------
+
+      const roadmapResponse = await fetch(
+        `${API_URL}/api/roadmap`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            learnerId: profileData.id,
+            career: career,
+            currentSkills: currentSkills
+          })
+        }
+      );
+
+      if (!roadmapResponse.ok) {
+        const errorText = await roadmapResponse.text();
+        throw new Error(
+          `Roadmap generation failed: ${errorText}`
+        );
+      }
+
+      const roadmapData = await roadmapResponse.json();
+
+      // -----------------------------------------
+      // STEP 4: Save everything for Roadmap.jsx
+      // -----------------------------------------
+
+      localStorage.setItem(
+        "learnerProfile",
+        JSON.stringify(profileData)
+      );
+
+      localStorage.setItem(
+        "roadmapData",
+        JSON.stringify(roadmapData)
+      );
+
+      localStorage.setItem(
+        "selectedCareer",
+        career
+      );
+
+      // -----------------------------------------
+      // STEP 5: Open roadmap
+      // -----------------------------------------
+
+      navigate("/roadmap");
+
+    } catch (error) {
+      console.error("Error generating roadmap:", error);
+
+      alert(
+        "Something went wrong while generating your learning path. Please make sure the backend is running."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -64,7 +280,7 @@ function Profile() {
             type="text"
             value={skills}
             onChange={(e) => setSkills(e.target.value)}
-            placeholder="Example: Java, HTML, Python"
+            placeholder="Example: HTML, CSS, Python"
           />
         </div>
 
@@ -96,8 +312,11 @@ function Profile() {
         <button
           className="primary-button"
           onClick={handleSubmit}
+          disabled={loading}
         >
-          Generate My Learning Path ✨
+          {loading
+            ? "Generating..."
+            : "Generate My Learning Path ✨"}
         </button>
 
       </div>
